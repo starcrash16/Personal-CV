@@ -178,6 +178,56 @@ img{
 
 }
 
+
+@media (max-width: 413px) { 
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+        padding: 10px;
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+
+    .header-txt {
+        flex-basis: auto;
+        width: 100%;
+        text-align: center;
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+
+    .header-txt span {
+        font-size: 25px; /* Ajusta el tamaño de la fuente */
+        font-weight: 600;
+        color: #ffffff;
+        margin-top: 0.5rem; /* Ajusta el margen superior */
+        text-align: center; /* Asegura que el texto esté centrado */
+        position: static;
+    }
+
+    .header-txt h1 {
+        font-size: 1.5rem !important; /* Tamaño de fuente similar a h3 */
+        color: #ffffff !important;
+        line-height: 1.2; /* Ajusta la altura de línea */
+        margin-top: 2rem;
+        margin-bottom: 15px;
+        margin: 25px 15px 0 0; /* Ajusta los márgenes */
+        text-align: center; /* Asegura que el texto esté centrado */
+    }
+
+}
+
+
 @media (min-width: 768px) {
     .header-txt span{
         color:aliceblue;
@@ -532,6 +582,45 @@ h2{
 }
 
 @media (max-width: 391px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto;
+        row-gap: 1rem;
+        margin-left: -1.5rem; /* Ajusta este valor según tus necesidades */
+    }
+
+    .campo {
+        height: auto;
+        min-height: 6rem;
+    }
+
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 2;
+    }
+    .contacto {
+        padding: 1rem; /* Reducir padding aún más en pantallas muy pequeñas */
+    }
+
+    .formulario {
+        padding: 2rem; /* Reducir padding en el formulario */
+    }
+
+    .formulario legend {
+        font-size: 1.2rem; /* Reducir tamaño de fuente del legend */
+    }
+
+    .campo label {
+        font-size: 1.2rem; /* Reducir tamaño de fuente de las etiquetas */
+    }
+
+    .input-text {
+        padding: 1rem; /* Reducir padding de los campos de texto */
+    }
+}
+
+@media (max-width: 413px) {
     .contenedor-campos {
         display: grid;
         grid-template-columns: 100%;
