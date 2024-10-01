@@ -347,7 +347,7 @@ h2{
     color: #B3B3B3;
     font-size: 17px;
     margin-bottom: 50px;
-    padding-left: 20px; /* Ajusta el valor en píxeles según lo necesites */
+    padding-left: 20px; 
     padding-right: 25px;
     text-align:justify;
     
@@ -389,8 +389,8 @@ h2{
 
 .butons {
     display: flex;
-    flex-direction: column; /* Asegura que los botones se apilen verticalmente */
-    align-items: center; /* Centra los botones horizontalmente */
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
     
 }
@@ -398,21 +398,20 @@ h2{
 
 @media (min-width: 768px) {
     .butons {
-        flex-direction: row; /* Cambia a disposición horizontal en pantallas más grandes */
+        flex-direction: row; 
     }
 
     .butons {
-        flex-direction: row; /* Cambia a disposición horizontal en pantallas más grandes */
+        flex-direction: row; 
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     .butons a {
-        margin-right: 1rem; /* Añade espacio entre los botones en disposición horizontal */
-        margin-bottom: 1rem; /* Elimina el margen inferior en disposición horizontal */
-        width: auto; /* Ajusta el ancho de los botones en disposición horizontal */
-       
+        margin-right: 1rem; 
+        margin-bottom: 1rem; 
+        width: auto; 
     }
 }
 
