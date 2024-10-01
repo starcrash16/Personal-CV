@@ -660,6 +660,45 @@ h2{
 }
 
 
+@media (max-width: 500px) {
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto;
+        row-gap: 1rem;
+        margin-left: -1.5rem; /* Ajusta este valor según tus necesidades */
+    }
+
+    .campo {
+        height: auto;
+        min-height: 6rem;
+    }
+
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1 / 2;
+    }
+    .contacto {
+        padding: 1rem; /* Reducir padding aún más en pantallas muy pequeñas */
+    }
+
+    .formulario {
+        padding: 2rem; /* Reducir padding en el formulario */
+    }
+
+    .formulario legend {
+        font-size: 1.2rem; /* Reducir tamaño de fuente del legend */
+    }
+
+    .campo label {
+        font-size: 1.2rem; /* Reducir tamaño de fuente de las etiquetas */
+    }
+
+    .input-text {
+        padding: 1rem; /* Reducir padding de los campos de texto */
+    }
+}
+
 
 @media (min-width: 768px) {
         .contenedor-campos {
