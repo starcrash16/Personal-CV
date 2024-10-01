@@ -179,7 +179,7 @@ img{
 }
 
 
-@media (max-width: 413px) { 
+@media (max-width: 500px) { 
 
     .header {
         display: flex;
