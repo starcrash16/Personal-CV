@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rene De Anda - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial';
+            background: linear-gradient(135deg, #101630 0%, #0a0f24 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0a0f24 0%, #101630 100%);
+            padding: 1rem 0;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-txt {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: rgb(217, 203, 186);
+            text-shadow: 0 0 10px rgba(217, 203, 186, 0.5);
+        }
+
+        /* Menú hamburguesa */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .menu-icono {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-icono:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar {
+            position: absolute;
+            top: 100%;
+            right: 2rem;
+            background: rgba(16, 22, 48, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1rem;
+            transform: translateY(-20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        input[type="checkbox"]:checked ~ .navbar {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar a:hover {
+            background: linear-gradient(45deg, rgb(145, 171, 237), rgb(217, 203, 186));
+            transform: translateX(5px);
+        }
+
+        /* Portfolio Principal */
+        .portfolio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .portfolio h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: rgb(217, 203, 186);
+            position: relative;
+            text-shadow: 0 0 20px rgba(217, 203, 186, 0.5);
+        }
+
+        .portfolio h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgb(145, 171, 237), transparent);
+            animation: pulse-line 2s infinite;
+        }
+
+        @keyframes pulse-line {
+            0%, 100% { opacity: 0.5; transform: translateX(-50%) scaleX(1); }
+            50% { opacity: 1; transform: translateX(-50%) scaleX(1.2); }
+        }
+
+        /* Tarjetas de proyecto */
+        .portfolio-card {
+            background: rgba(16, 22, 48, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(217, 203, 186, 0.2);
+            transition: all 0.5s ease;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(145, 171, 237, 0.2);
+            border-color: rgba(217, 203, 186, 0.5);
+        }
+
+        /* Efecto de luz animado en las tarjetas */
+        .portfolio-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(217, 203, 186, 0.1),
+                transparent
+            );
+            transition: left 0.8s ease;
+        }
+
+        .portfolio-card:hover::before {
+            left: 100%;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-number {
+            background: linear-gradient(45deg, rgb(145, 171, 237), rgb(217, 203, 186));
+            color: #0a0f24;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin-right: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            color: rgb(217, 203, 186);
+            margin: 0;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+        }
+
+        /* Carrusel personalizado */
+        .carousel {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background: rgba(217, 203, 186, 0.8);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-control-prev {
+            left: 15px;
+        }
+
+        .carousel-control-next {
+            right: 15px;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: rgba(145, 171, 237, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1);
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background: rgba(217, 203, 186, 0.5);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators .active {
+            background: rgb(145, 171, 237);
+            transform: scale(1.2);
+        }
+
+        /* Botón del repositorio */
+        .repo-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(45deg, rgb(145, 171, 237), rgb(217, 203, 186));
+            color: #0a0f24;
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .repo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(145, 171, 237, 0.4);
+            color: #0a0f24;
+        }
+
+        .repo-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .repo-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Sección de habilidades */
+        .skills {
+            background: rgba(10, 15, 36, 0.8);
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .skills h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: rgb(217, 203, 186);
+            margin-bottom: 3rem;
+        }
+
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            background: rgba(16, 22, 48, 0.8);
+            border: 2px solid rgba(217, 203, 186, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-icon:hover {
+            transform: translateY(-10px) rotate(5deg);
+            border-color: rgb(145, 171, 237);
+            box-shadow: 0 15px 30px rgba(145, 171, 237, 0.3);
+        }
+
+        .skill-icon img {
+            width: 50px;
+            height: 50px;
+            filter: brightness(0.8);
+            transition: filter 0.3s ease;
+        }
+
+        .skill-icon:hover img {
+            filter: brightness(1.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0a0f24;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Animaciones de aparición */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .portfolio {
+                padding: 2rem 1rem;
+            }
+            
+            .portfolio h2 {
+                font-size: 2.5rem;
+            }
+            
+            .project-title {
+                font-size: 1.5rem;
+            }
+            
+            .portfolio-card {
+                padding: 1.5rem;
+            }
+            
+            .carousel-item img {
+                height: 200px;
+            }
+        }
+
+        /* Animación inicial de las tarjetas */
+        .portfolio-card:nth-child(1) { animation-delay: 0.2s; }
+        .portfolio-card:nth-child(2) { animation-delay: 0.4s; }
+        .portfolio-card:nth-child(3) { animation-delay: 0.6s; }
+        .portfolio-card:nth-child(4) { animation-delay: 0.8s; }
+        .portfolio-card:nth-child(5) { animation-delay: 1.0s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu">
+            <div class="header-txt">
+                <span>Rene De Anda Medina<br>Computer Systems Engineer</span>
+            </div>
+            
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="menu">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Menu</a></li>
+                    <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="portfolio">
+        <h2 class="animate__animated animate__fadeInDown">My Portfolio</h2>
+        
+        <div class="portfolio-card">
+            <div class="project-header">
+                <span class="project-number">Project 1</span>
+                <h3 class="project-title">Car Sales Simulation Web Application                </h3>
+            </div>
+
+                        <div class="project-content">
+                            <!-- Project Description -->
+                            <div class="project-description mb-4">
+                                <p class="lead text-center mb-4">
+                                    This project is a comprehensive web application built with Angular framework, featuring Firebase integration for user authentication and a NoSQL database backend. The application simulates a car sales platform with a focus on delivering an optimal user experience.
+                                </p>
+                                
+                                <!-- Technical Stack -->
+                                <div class="tech-stack text-center">
+                                    <h5 class="text-center mb-3">Technical Stack</h5>
+                                    <ul class="list-unstyled tech-list">
+                                        <li class="mb-2">
+                                            <i class="fab fa-angular text-danger me-2"></i>
+                                            <strong>Angular</strong> - Frontend Framework
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="fas fa-database text-warning me-2"></i>
+                                            <strong>Firebase</strong> - Authentication & Database
+                                        </li>
+
+                                        <li class="mb-2">
+                                            <i class="fab fa-html5 text-primary me-2"></i>
+                                            <strong>HTML5, CSS3, TypeScript</strong> - Core Technologies
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                
+                            <!-- Action Buttons -->
+                            <div class="project-actions text-center">
+                                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                    <a href="https://torressssssssssssss.github.io/GitP/inicio" 
+                                       class="btn btn-primary btn-lg" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer">
+                                        <i class="fas fa-external-link-alt me-2"></i>
+                                        Live Demo
+                                    </a>
+                                    <a href="https://github.com/Dianaqwert/SPA_Agencia_Automoviles" class="repo-btn" target="_blank">
+                                        <i class="fab fa-github"></i> View Repository
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+
+        <!-- Proyecto 1 -->
+        <div class="portfolio-card">
+            <div class="project-header">
+                <span class="project-number">Project 2</span>
+                <h3 class="project-title">Packet Sniffer App</h3>
+            </div>
+            
+            <div class="row h-100">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <p class="project-description text-center">
+                        The system is built using <strong>Qt framework</strong> and leverages the <strong>npcap SDK </strong>for low-level packet capture on Windows platforms.
+                        Sniffalant captures, analyzes, and displays network traffic in real-time, similar to established tools like Wireshark, but with a simplified interface tailored for academic use.
+                    </p>
+                    <div class="text-center m-5">
+                        <a href="https://github.com/starcrash16/El-Viajero" class="repo-btn" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div id="carousel1" class="carousel slide w-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/sniffalant1.png" alt="Sniffalant 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/sniffalant2.png" alt="Sniffalant 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="portfolio-card">
+            <div class="project-header">
+                <span class="project-number">Project 3</span>
+                <h3 class="project-title">OS Simulator: Round Robin & Buddy System</h3>
+            </div>
+            
+            <div class="row h-100">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <p class="project-description text-center">
+                        Developed during my 2nd semester, this <strong>C++</strong> project simulates Round Robin scheduling and Buddy System memory management. Built using Object-Oriented Programming principles, it demonstrates advanced understanding of operating system concepts.
+                    </p>
+                    <div class="text-center m-5">
+                        <a href="https://github.com/starcrash16/OS_RR-Buddy" class="repo-btn" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div id="carousel2" class="carousel slide w-100" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/RoundRobinBuddy.png" alt="OS Simulator">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="portfolio-card">
+            <div class="project-header">
+                <span class="project-number">Project 4</span>
+                <h3 class="project-title">Klotski Game Simulator</h3>
+            </div>
+            
+            <div class="row h-100">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <p class="project-description text-center">
+                        A challenging sliding puzzle where the goal is moving the red block to the exit. This project implements <strong>graph theory</strong> and <strong>Divide and Conquer algorithms</strong> to automatically solve the puzzle, showcasing advanced algorithmic problem-solving skills.
+                    </p>
+                    <div class="text-center m-5">
+                        <a href="https://github.com/starcrash16/Klotski" class="repo-btn" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div id="carousel3" class="carousel slide w-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/Klotski 2.png" alt="Klotski Simulator">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/Klotski real.png" alt="Klotski Real Game">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyecto 4 -->
+        <div class="portfolio-card">
+            <div class="project-header">
+                <span class="project-number">Project 5</span>
+                <h3 class="project-title">Assembly Language Simulator</h3>
+            </div>
+            
+            <div class="row h-100">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <p class="project-description text-center">
+                        A sophisticated program written in <strong>Assembly 8086</strong> and <strong>C++</strong> that simulates a stepper motor mechanism for door automation. This project demonstrates low-level programming skills and hardware simulation capabilities.
+                    </p>
+                    <div class="text-center m-5">
+                        <a href="https://github.com/starcrash16/Stepper_Motor_ASM" class="repo-btn" target="_blank">
+                            <i class="fab fa-github "></i> View Repository
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div id="carousel4" class="carousel slide w-100" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/Puerta_Automática.png" alt="Automatic Door Simulator">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyecto 5 -->
+        <div class="portfolio-card">
+            <div class="project-header">
+                <span class="project-number">Project 6</span>
+                <h3 class="project-title">Pac-Craft</h3>
+            </div>
+            
+            <div class="row h-100">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <p class="project-description">
+                        My first complete video game - a <strong>Minecraft-inspired Pac-Man</strong>! Built with <strong>C++</strong> and the <strong>Allegro graphics library</strong>, this project represents my most personal and beloved creation, showcasing game development skills and creative vision.
+                    </p>
+                    <div class="text-center m-5">
+                        <a href="https://github.com/starcrash16/MinePac" class="repo-btn" target="_blank">
+                            <i class="fab fa-github"></i> View Repository
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center">
+                    <div id="carousel3" class="carousel slide w-100" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/minepac.png" alt="Pac-Craft Game">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/pac_craft2.png" alt="Pac-Craft Game 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/pac_craft3.png" alt="Pac-Craft Game 2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="skills">
+        <h2 class="animate-on-scroll">Programming Languages I Work With</h2>
+        <div class="skills-content animate-on-scroll">
+            <div class="skill-icon">
+                <img src="images/l4.png" alt="Python">
+            </div>
+            <div class="skill-icon">
+                <img src="images/l7.png" alt="JavaScript">
+            </div>
+            <div class="skill-icon">
+                <img src="images/c++.png" alt="C++">
+            </div>
+            <div class="skill-icon">
+                <img src="images/icons8-c-programación-48.png" alt="C">
+            </div>
+            <div class="skill-icon">
+                <img src="images/l5.png" alt="Java">
+            </div>
+            <div class="skill-icon">
+                <img src="images/l2.png" alt="HTML/CSS">
+            </div>
+            <div class="skill-icon">
+                <img src="images/javascript-logo-0.webp" alt="HTML/CSS">
+            </div>
+            <div class="skill-icon">
+                <img src="images/TYPE SCRIPT LOGO.webp" alt="HTML/CSS">
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio text-center">
+        <h2>Learning New Technologies</h2>
+      
+        <!-- Angular -->
+        <div class="portfolio-card">
+          <div class="project-header">
+            <span class="project-number">#1</span>
+            <h3 class="project-title">Angular</h3>
+          </div>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular Icon" style="width: 60px; margin-bottom: 1rem;">
+          <p class="project-description">
+            I am currently learning Angular to create robust and efficient SPA applications.
+          </p>
+        </div>
+      
+        <!-- React -->
+        <div class="portfolio-card">
+          <div class="project-header">
+            <span class="project-number">#2</span>
+            <h3 class="project-title">React</h3>
+          </div>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Icon" style="width: 60px; margin-bottom: 1rem;">
+          <p class="project-description">
+            I am working with React to build interactive and dynamic user interfaces.
+          </p>
+        </div>
+      
+        <!-- .NET -->
+        <div class="portfolio-card">
+          <div class="project-header">
+            <span class="project-number">#3</span>
+            <h3 class="project-title">.NET</h3>
+          </div>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Icon" style="width: 60px; margin-bottom: 1rem;">
+          <p class="project-description">
+            I am exploring the .NET ecosystem for backend development using C#.
+          </p>
+        </div>
+      
+        <!-- Node.js & HTTP -->
+        <div class="portfolio-card">
+          <div class="project-header">
+            <span class="project-number">#4</span>
+            <h3 class="project-title">Node.js & HTTP Requests</h3>
+          </div>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js Icon" style="width: 60px; margin-bottom: 1rem;">
+          <p class="project-description">
+            I’m understanding how Node.js works and its role in handling HTTP requests for web services.
+          </p>
+        </div>
+      
+        <!-- Spring Boot -->
+        <div class="portfolio-card">
+          <div class="project-header">
+            <span class="project-number">#5</span>
+            <h3 class="project-title">Spring Boot</h3>
+          </div>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Icon" style="width: 60px; margin-bottom: 1rem;">
+          <p class="project-description">
+            I am learning how to create robust RESTful APIs using the Spring Boot framework.
+          </p>
+        </div>
+      </section>
+      
+      
+    
+
+    <footer class="footer">
+        <p>All rights reserved <br>ISC René De Anda <br>ID: 260866</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animación de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Efecto de parallax suave en las tarjetas
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.portfolio-card');
+            const scrolled = window.pageYOffset;
+            
+            cards.forEach((card, index) => {
+                const rate = scrolled * -0.1 * (index + 1);
+                card.style.transform = `translateY(${rate}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
