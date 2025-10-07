@@ -71,7 +71,7 @@
 
 .text-intro {
     padding: 15px 25%;
-    text-align: center;
+    text-align: left;
     animation: fadeIn 1.5s ease-in-out;
 }
 
