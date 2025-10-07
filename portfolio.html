@@ -348,6 +348,62 @@
                     transform: translateY(0);
                 }
             }
+
+            .footer {
+                background-color: #0a0f24;
+                color: rgba(255, 255, 255, 0.7);
+                padding: 2rem 1rem;
+                margin-top: 4rem;
+                border-top: 1px solid rgba(217, 203, 186, 0.1);
+            }
+
+            .footer-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap; /* Para que se ajuste en pantallas pequeñas */
+                gap: 1.5rem; /* Espacio entre el texto y los íconos */
+            }
+
+            .footer-copyright {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+
+            .footer-social {
+                display: flex;
+                gap: 1rem; /* Espacio entre los íconos */
+            }
+
+            .footer-social a {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 1.5rem; /* Tamaño de los íconos */
+                transition: color 0.3s ease, transform 0.3s ease;
+            }
+
+            .footer-social a:hover {
+                color: #fff; /* El ícono se vuelve blanco brillante */
+                transform: translateY(-3px); /* Efecto para que se eleve un poco */
+            }
+
+            /* --- ESTILOS RESPONSIVE PARA EL FOOTER --- */
+            @media (max-width: 768px) {
+                .footer-container {
+                    flex-direction: column; /* Apila los elementos verticalmente */
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                .footer-copyright {
+                    order: 2; /* Mueve el texto de copyright debajo de los íconos */
+                }
+
+                .footer-social {
+                    order: 1; /* Mueve los íconos sociales arriba */
+                }
+            }
         </style>
     </head>
 <body>
@@ -714,16 +770,36 @@
             I’m understanding how Node.js works and its role in handling HTTP requests for web services.
           </p>
         </div>
+
+        <div class="portfolio-card">
+            <div class="project-header">
+              <span class="project-number">#6</span>
+              <h3 class="project-title">Spring Boot</h3>
+            </div>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Icon" style="width: 60px; margin-bottom: 1rem;">
+            <p class="project-description">
+              I am learning how to create robust RESTful APIs using the Spring Boot framework.
+            </p>
+          </div>
       
         <!-- Spring Boot -->
         
       </section>
       
-      
-    
-
-    <footer class="footer">
-        <p>All rights reserved <br>ISC René De Anda <br>ID: 260866</p>
+      <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-copyright">
+                <p>ISC René De Anda Medina<br>&copy; 2025 All rights reserved</p>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/starcrash16" target="_blank" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rene-de-anda-medina-131bab24a/" target="_blank" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

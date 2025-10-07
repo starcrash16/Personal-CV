@@ -123,7 +123,61 @@ input[type="checkbox"] {
     }
 }
 
+.footer {
+    background-color: #0a0f24;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(217, 203, 186, 0.1);
+}
 
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Para que se ajuste en pantallas pequeñas */
+    gap: 1.5rem; /* Espacio entre el texto y los íconos */
+}
+
+.footer-copyright {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem; /* Espacio entre los íconos */
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem; /* Tamaño de los íconos */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #fff; /* El ícono se vuelve blanco brillante */
+    transform: translateY(-3px); /* Efecto para que se eleve un poco */
+}
+
+/* --- ESTILOS RESPONSIVE PARA EL FOOTER --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-copyright {
+        order: 2; /* Mueve el texto de copyright debajo de los íconos */
+    }
+
+    .footer-social {
+        order: 1; /* Mueve los íconos sociales arriba */
+    }
+}
 /* === FIN DE LOS ESTILOS DEL HEADER === */
 
 
