@@ -1,123 +1,795 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rene De Anda</title>
-    <link rel="icon" type="image/x-icon" href="/Personal-CV/images/portfolio-logo.ico">
+    <meta name="description" content="René De Anda Medina - Software Engineer. Experience at Oracle, C3.AI, INEGI Data Science Lab. Specializing in Agentic AI, RAG Systems, Cloud Architecture & High-Performance Systems.">
+    <title>René De Anda Medina | Software Engineer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/portfolio-logo.ico">
+    <link rel="icon" type="image/svg+xml" href="images/portfolio-logo.svg">
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/body.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Header Navigation -->
     <header class="header">
-        <div class="menu">
-            <div class="header-txt">
-                <span>Rene De Anda Medina<br>Computer Systems Engineer</span>
-            </div>
-            
-            <input type="checkbox" id="menu" />
-            <label for="menu">
-                <img src="images/menu.png" class="menu-icono" alt="menu">
-            </label>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Menu</a></li>
-                    <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+        <div class="navbar-container">
+            <a href="#hero" class="brand-logo">
+                <img src="images/Foto_Rene.png" alt="René De Anda" class="brand-avatar">
+                <div class="brand-text">
+                    René De Anda
+                    <span>Software Engineer</span>
+                </div>
+            </a>
+
+            <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-user-code"></i> About</a></li>
+                    <li><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-laptop-code"></i> Projects</a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-cogs"></i> Skills</a></li>
+                    <li><a href="#achievements" class="nav-link"><i class="fas fa-award"></i> Honors</a></li>
+                    <li><a href="#contact" class="nav-link nav-cta"><i class="fas fa-paper-plane"></i> Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="personal-info">
-        <div class="intro">
-            <h1 class="animate__animated animate__fadeInDownBig">Hello there, I am Rene!</h1>
-            <h2 class="animate__animated animate__fadeInDown">Future Software Engineer</h2>
-        </div>
-        <div class="about-img">
-            <img src="images/Foto_Rene.png" alt="">
-        </div>
-        <div class="text-intro">
-            <h2>About me</h2>
-            <p>
-                I seek to bring about <span class="highlight">positive changes</span>, and to achieve these
-                changes, I fully commit myself to reach the desired endpoint. 
-                <br><br>
-                I am currently in the <span class="highlight"> 6th semester of Computer Systems Engineering in the Autonoums University of Aguascalientes, Mexico.</span> 
-                My goal is to explore new ideas, cultures, and
-                languages to fulfill my self-realization and better comprehend
-                our social environment. 
-            </p>
-        </div>
-
-        <div class="contact-info">
-            <h2 class="text-center mb-4">Contact Information</h2>
-            
-            <div class="contact-details mb-4">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="contact-item d-flex align-items-center mb-3">
-                            <i class="fas fa-phone text-primary me-3" style="font-size: 1.2rem;"></i>
-                            <span>+52 449 960 9065</span>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="badge-status">
+                            <span class="status-dot"></span>
+                            <span>Software Engineer Intern @ Oracle</span>
                         </div>
-                        <div class="contact-item d-flex align-items-center mb-3">
-                            <i class="fas fa-envelope text-primary me-3" style="font-size: 1.2rem;"></i>
-                            <span>renerosendo8@gmail.com</span>
+                        
+                        <h1 class="hero-title">Building Intelligent Systems & Scalable Cloud Solutions</h1>
+                        
+                        <div class="hero-role">
+                            <i class="fas fa-terminal"></i>
+                            <span>Agentic AI &bull; Cloud Infrastructure &bull; Systems Software</span>
+                        </div>
+                        
+                        <p class="hero-bio">
+                            I'm <span class="highlight">René De Anda Medina</span>, a Computer Systems Engineering student with hands-on experience building reliability for <span class="highlight">Agentic AI platforms at Oracle</span>, enterprise modules at <span class="highlight">C3.AI</span>, and on-premise RAG inference pipelines at <span class="highlight">INEGI Data Science Lab</span>.
+                        </p>
+                        
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn-primary">
+                                <i class="fas fa-folder-open"></i> View My Work
+                            </a>
+                            <a href="#contact" class="btn-secondary">
+                                <i class="fas fa-envelope"></i> Get In Touch
+                            </a>
+                        </div>
+                        
+                        <div class="hero-socials">
+                            <a href="https://github.com/starcrash16" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub Profile">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rene-de-anda-medina-131bab24a/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn Profile">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:renerosendo8@gmail.com" class="social-icon-btn" aria-label="Email Me">
+                                <i class="fas fa-at"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual">
+                        <div class="profile-card-wrapper">
+                            <div class="profile-img-box">
+                                <img src="images/Foto_Rene.png" alt="René De Anda Medina Profile Photo">
+                            </div>
+                            <div class="experience-badge-float">
+                                <div class="badge-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="badge-text">
+                                    <strong>Oracle &amp; C3.AI Alum</strong>
+                                    <span>Spring AI &bull; OCI &bull; RAG</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="social-links" style="margin:2rem;"></div>
-                <div style="display: flex; justify-content: center; gap: 2rem;">
-                    <a href="https://github.com/starcrash16" target="_blank" aria-label="GitHub Profile" style="font-size: 2rem; color: inherit; ">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rene-de-anda-medina-131bab24a/" aria-label="LinkedIn Profile" target="_blank" style="font-size: 2rem; color: inherit;">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
-            
-        </div>
+        </section>
 
-        <div class="skills-container">
-            <div class="skill-card">
-                <h3>In process for Full Stack Developer</h3>
+        <!-- About Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">01 / Background</span>
+                    <h2 class="section-title">About Me &amp; Education</h2>
+                    <p class="section-description">
+                        Dedicated software engineer focused on system reliability, high-performance computing, and enterprise AI applications.
+                    </p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="glass-card">
+                        <h3 class="card-title">
+                            <i class="fas fa-user-astronaut"></i> Professional Overview
+                        </h3>
+                        <p class="bio-text">
+                            I seek to engineer impactful software systems that solve complex, real-world problems. Whether containerizing serverless AI platforms on Oracle Cloud Infrastructure, optimizing enterprise scheduling by 80%, or developing custom RAG pipelines, I fully commit to achieving high precision and clean architecture.
+                        </p>
+                        <br>
+                        <p class="bio-text">
+                            Outside of engineering, I'm an avid competitive programmer (ICPC Regional finalist) driven by continuous learning and self-realization across technologies, languages, and cultures.
+                        </p>
+                    </div>
+
+                    <div class="glass-card">
+                        <h3 class="card-title">
+                            <i class="fas fa-graduation-cap"></i> Education &amp; Foundation
+                        </h3>
+                        <div class="education-details">
+                            <div class="edu-item">
+                                <div class="edu-school">Autonomous University of Aguascalientes</div>
+                                <div class="edu-degree">B.S. in Computer Systems Engineering</div>
+                                <div class="edu-meta">
+                                    <span><i class="fas fa-calendar-alt"></i> Expected Dec 2026</span>
+                                    <span><i class="fas fa-star text-warning"></i> GPA: 3.7 / 4.0</span>
+                                    <span><i class="fas fa-language"></i> English C1</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="strengths-grid" style="margin-top: 1.5rem;">
+                            <div class="strength-box">
+                                <i class="fas fa-bolt"></i>
+                                <h4>System Reliability</h4>
+                                <p>Integration testing & RAG accuracy verification</p>
+                            </div>
+                            <div class="strength-box">
+                                <i class="fas fa-cloud"></i>
+                                <h4>Cloud &amp; DevOps</h4>
+                                <p>OCI, AWS, Docker &amp; CI/CD automation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>Creative</h3>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">02 / Career Path</span>
+                    <h2 class="section-title">Work Experience</h2>
+                    <p class="section-description">
+                        Industry engineering experience across global enterprise software companies and research labs.
+                    </p>
+                </div>
+
+                <div class="timeline">
+                    <!-- Experience 1: Oracle -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-company">Oracle</h3>
+                                    <div class="timeline-role">Software Engineer Intern</div>
+                                </div>
+                                <span class="timeline-date">July 2026 – Present</span>
+                            </div>
+                            <div class="timeline-location">
+                                <i class="fas fa-map-marker-alt"></i> Guadalajara, México
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Contributed to system reliability for a globally-deployed agentic AI platform during its architectural migration from LangChain to Spring AI by designing and executing comprehensive integration test suites.</li>
+                                <li>Safeguarded Retrieval-Augmented Generation (RAG) response accuracy and system stability across the platform transition.</li>
+                                <li>Containerized and deployed the migrated application on Oracle Cloud Infrastructure (OCI) using a serverless architecture, enhancing deployment consistency and scalability across environments.</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tag">Spring AI</span>
+                                <span class="tag">LangChain</span>
+                                <span class="tag">RAG Architecture</span>
+                                <span class="tag">OCI</span>
+                                <span class="tag">Docker</span>
+                                <span class="tag">Serverless</span>
+                                <span class="tag">Integration Testing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: C3.AI -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-company">C3.AI</h3>
+                                    <div class="timeline-role">Software Engineering Intern</div>
+                                </div>
+                                <span class="timeline-date">May 2026 – July 2026</span>
+                            </div>
+                            <div class="timeline-location">
+                                <i class="fas fa-map-marker-alt"></i> Guadalajara, México
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Built a calendarization module for an agent-based enterprise application using React, Python, and the C3 AI platform, delivering all sprint requirements on schedule.</li>
+                                <li>Automated task allocation within the application's core scheduling workflow, cutting manual scheduling time by 80%.</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">C3 AI Platform</span>
+                                <span class="tag">Task Scheduling</span>
+                                <span class="tag">Enterprise UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3: INEGI -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-company">INEGI (Data Science Laboratory)</h3>
+                                    <div class="timeline-role">Software Engineer Intern</div>
+                                </div>
+                                <span class="timeline-date">October 2025 – February 2026</span>
+                            </div>
+                            <div class="timeline-location">
+                                <i class="fas fa-map-marker-alt"></i> Aguascalientes, México
+                            </div>
+                            <ul class="timeline-bullets">
+                                <li>Built on-premise LLM inference pipelines utilizing vLLM and Ollama.</li>
+                                <li>Implemented Retrieval-Augmented Generation (RAG) to expand the laboratory's internal AI capabilities without relying on external commercial APIs, ensuring total data privacy.</li>
+                            </ul>
+                            <div class="tech-tags">
+                                <span class="tag">vLLM</span>
+                                <span class="tag">Ollama</span>
+                                <span class="tag">RAG Pipelines</span>
+                                <span class="tag">On-Premise LLMs</span>
+                                <span class="tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>Autodidact</h3>
+        </section>
+
+        <!-- Projects Showcase Section -->
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">03 / Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <p class="section-description">
+                        Highlighting AI applications, cloud solutions, systems software, and algorithmic solvers.
+                    </p>
+                </div>
+
+                <!-- Filter Controls -->
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="ai">AI &amp; RAG</button>
+                    <button class="filter-btn" data-filter="web">Web Applications</button>
+                    <button class="filter-btn" data-filter="systems">Systems &amp; Algorithms</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: AI Tutor RAG -->
+                    <div class="project-card" data-category="ai">
+                        <div class="project-img-wrapper">
+                            <img src="images/Proyecto1_2.png" alt="AI Tutor RAG & LLM Fine-Tuning">
+                            <span class="project-badge">Academic Project</span>
+                            <div class="project-overlay-btn">
+                                <button class="btn-preview" data-project-id="aitutor" data-project-title="AI Tutor for Education – RAG & LoRA Fine-Tuning" data-img-src="images/Proyecto1_2.png">
+                                    <i class="fas fa-expand"></i> Preview Screenshot
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-header-row">
+                                <h3 class="project-title">AI Tutor for Education</h3>
+                            </div>
+                            <p class="project-desc">
+                                Interactive AI chat assistant for the Basic Sciences Department integrating a custom LoRA fine-tuned Large Language Model with RAG architecture to automate programming practice and debugging.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tag">LoRA Fine-Tuning</span>
+                                <span class="tag">RAG</span>
+                                <span class="tag">LLM</span>
+                                <span class="tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Car Sales App -->
+                    <div class="project-card" data-category="web">
+                        <div class="project-img-wrapper">
+                            <img src="images/Proyecto1.png" alt="Car Sales Simulation Web Application">
+                            <span class="project-badge">Live Web App</span>
+                            <div class="project-overlay-btn">
+                                <button class="btn-preview" data-project-id="carsales" data-project-title="Car Sales Simulation Web App" data-img-src="images/Proyecto1.png">
+                                    <i class="fas fa-expand"></i> Preview Screenshot
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-header-row">
+                                <h3 class="project-title">Car Sales Simulation App</h3>
+                            </div>
+                            <p class="project-desc">
+                                Full-featured web application built with Angular and Firebase (Authentication & NoSQL Database) simulating a modern car dealership platform with optimal user experience.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tag">Angular</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">NoSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://spa-28285.web.app" target="_blank" rel="noopener" class="link-btn">
+                                    <i class="fas fa-external-link-alt"></i> Live Demo
+                                </a>
+                                <a href="https://github.com/Dianaqwert/SPA_RaedaCarsInMotion" target="_blank" rel="noopener" class="link-btn">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Packet Sniffer -->
+                    <div class="project-card" data-category="systems">
+                        <div class="project-img-wrapper">
+                            <img src="images/sniffalant1.png" alt="Packet Sniffer App">
+                            <span class="project-badge">Desktop Systems App</span>
+                            <div class="project-overlay-btn">
+                                <button class="btn-preview" data-project-id="sniffalant" data-project-title="Sniffalant - Qt & Npcap Packet Sniffer">
+                                    <i class="fas fa-images"></i> View Gallery (2)
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-header-row">
+                                <h3 class="project-title">Packet Sniffer App (Sniffalant)</h3>
+                            </div>
+                            <p class="project-desc">
+                                Network analysis tool built using Qt Framework and npcap SDK for low-level packet capture on Windows. Captures and analyzes real-time network traffic with a clean UI.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tag">Qt Framework</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">npcap SDK</span>
+                                <span class="tag">Networking</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/starcrash16/El-Viajero" target="_blank" rel="noopener" class="link-btn">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: OS Simulator -->
+                    <div class="project-card" data-category="systems">
+                        <div class="project-img-wrapper">
+                            <img src="images/RoundRobinBuddy.png" alt="OS Simulator Round Robin Buddy">
+                            <span class="project-badge">OS Simulator</span>
+                            <div class="project-overlay-btn">
+                                <button class="btn-preview" data-project-id="roundrobin" data-project-title="OS Simulator: Round Robin & Buddy System" data-img-src="images/RoundRobinBuddy.png">
+                                    <i class="fas fa-expand"></i> Preview Screenshot
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-header-row">
+                                <h3 class="project-title">OS Scheduler &amp; Memory Manager</h3>
+                            </div>
+                            <p class="project-desc">
+                                C++ simulation of Round Robin process scheduling and Buddy System memory management implementing strict Object-Oriented Design principles.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tag">C++</span>
+                                <span class="tag">OOP</span>
+                                <span class="tag">Operating Systems</span>
+                                <span class="tag">Memory Mgmt</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/starcrash16/OS_RR-Buddy" target="_blank" rel="noopener" class="link-btn">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Klotski Solver -->
+                    <div class="project-card" data-category="systems">
+                        <div class="project-img-wrapper">
+                            <img src="images/Klotski 2.png" alt="Klotski Game Simulator">
+                            <span class="project-badge">Algorithmic Solver</span>
+                            <div class="project-overlay-btn">
+                                <button class="btn-preview" data-project-id="klotski" data-project-title="Klotski Puzzle Solver & Simulator">
+                                    <i class="fas fa-images"></i> View Gallery (2)
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-header-row">
+                                <h3 class="project-title">Klotski Game Simulator</h3>
+                            </div>
+                            <p class="project-desc">
+                                Sliding puzzle simulator implementing Graph Theory and Divide &amp; Conquer algorithms to compute automated puzzle-solving steps.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tag">Graph Theory</span>
+                                <span class="tag">Divide &amp; Conquer</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">Algorithms</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/starcrash16/Klotski" target="_blank" rel="noopener" class="link-btn">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: ASM Motor Simulator -->
+                    <div class="project-card" data-category="systems">
+                        <div class="project-img-wrapper">
+                            <img src="images/Puerta_Automática.png" alt="Assembly Stepper Motor Door Simulator">
+                            <span class="project-badge">Low-Level Hardware</span>
+                            <div class="project-overlay-btn">
+                                <button class="btn-preview" data-project-id="puerta" data-project-title="Assembly 8086 Stepper Motor Door Simulator" data-img-src="images/Puerta_Automática.png">
+                                    <i class="fas fa-expand"></i> Preview Screenshot
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-header-row">
+                                <h3 class="project-title">Assembly Stepper Motor Simulator</h3>
+                            </div>
+                            <p class="project-desc">
+                                Hardware simulation written in 8086 Assembly and C++ modeling stepper motor door automation mechanism.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tag">Assembly 8086</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">Hardware Simulation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/starcrash16/Stepper_Motor_ASM" target="_blank" rel="noopener" class="link-btn">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: Pac-Craft -->
+                    <div class="project-card" data-category="systems">
+                        <div class="project-img-wrapper">
+                            <img src="images/minepac.png" alt="Pac Craft Game">
+                            <span class="project-badge">2D Game Engine</span>
+                            <div class="project-overlay-btn">
+                                <button class="btn-preview" data-project-id="pacman" data-project-title="Pac-Craft - C++ Minecraft Pacman Game">
+                                    <i class="fas fa-images"></i> View Gallery (3)
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-header-row">
+                                <h3 class="project-title">Pac-Craft Game</h3>
+                            </div>
+                            <p class="project-desc">
+                                A Minecraft-themed Pac-Man game created using C++ and the Allegro graphics library, featuring custom rendering logic and game loop architecture.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tag">C++</span>
+                                <span class="tag">Allegro Engine</span>
+                                <span class="tag">Game Architecture</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/starcrash16/MinePac" target="_blank" rel="noopener" class="link-btn">
+                                    <i class="fab fa-github"></i> Repository
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>Communicative</h3>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section id="skills" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">04 / Expertise</span>
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-description">
+                        Comprehensive overview of technologies, frameworks, and engineering tools in my stack.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- AI & ML -->
+                    <div class="skill-category-card">
+                        <h3 class="skill-cat-title">
+                            <i class="fas fa-brain"></i> AI &amp; Machine Learning
+                        </h3>
+                        <div class="skill-chips">
+                            <span class="chip"><i class="fas fa-microchip"></i> LangChain</span>
+                            <span class="chip"><i class="fas fa-project-diagram"></i> LangGraph</span>
+                            <span class="chip"><i class="fas fa-sliders-h"></i> LoRA Fine-Tuning</span>
+                            <span class="chip"><i class="fas fa-plug"></i> MCP</span>
+                            <span class="chip"><i class="fas fa-database"></i> RAG Systems</span>
+                            <span class="chip"><i class="fas fa-leaf"></i> Spring AI</span>
+                            <span class="chip"><i class="fas fa-rocket"></i> vLLM</span>
+                            <span class="chip"><i class="fas fa-robot"></i> Ollama</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & DevOps -->
+                    <div class="skill-category-card">
+                        <h3 class="skill-cat-title">
+                            <i class="fas fa-cloud"></i> Cloud &amp; DevOps
+                        </h3>
+                        <div class="skill-chips">
+                            <span class="chip"><i class="fab fa-aws"></i> AWS</span>
+                            <span class="chip"><i class="fab fa-microsoft"></i> Azure</span>
+                            <span class="chip"><i class="fas fa-server"></i> OCI (Oracle Cloud)</span>
+                            <span class="chip"><i class="fab fa-docker"></i> Docker</span>
+                            <span class="chip"><i class="fas fa-dharmachakra"></i> Kubernetes</span>
+                            <span class="chip"><i class="fas fa-code-branch"></i> CI/CD</span>
+                            <span class="chip"><i class="fas fa-cubes"></i> Terraform</span>
+                            <span class="chip"><i class="fas fa-box"></i> Podman</span>
+                            <span class="chip"><i class="fab fa-jenkins"></i> Jenkins</span>
+                            <span class="chip"><i class="fas fa-fire"></i> Firebase</span>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="skill-category-card">
+                        <h3 class="skill-cat-title">
+                            <i class="fas fa-code"></i> Programming Languages
+                        </h3>
+                        <div class="skill-chips">
+                            <span class="chip"><i class="fab fa-python"></i> Python</span>
+                            <span class="chip"><i class="fab fa-java"></i> Java</span>
+                            <span class="chip"><i class="fas fa-code"></i> C++</span>
+                            <span class="chip"><i class="fas fa-terminal"></i> C</span>
+                            <span class="chip"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="chip"><i class="fas fa-file-code"></i> TypeScript</span>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="skill-category-card">
+                        <h3 class="skill-cat-title">
+                            <i class="fas fa-layer-group"></i> Frameworks
+                        </h3>
+                        <div class="skill-chips">
+                            <span class="chip"><i class="fab fa-angular"></i> Angular</span>
+                            <span class="chip"><i class="fab fa-react"></i> React</span>
+                            <span class="chip"><i class="fas fa-leaf"></i> Spring Boot</span>
+                            <span class="chip"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="chip"><i class="fas fa-feather"></i> Django</span>
+                            <span class="chip"><i class="fas fa-flask"></i> Flask</span>
+                        </div>
+                    </div>
+
+                    <!-- Data & APIs -->
+                    <div class="skill-category-card">
+                        <h3 class="skill-cat-title">
+                            <i class="fas fa-database"></i> Data &amp; APIs
+                        </h3>
+                        <div class="skill-chips">
+                            <span class="chip"><i class="fas fa-database"></i> PostgreSQL</span>
+                            <span class="chip"><i class="fas fa-server"></i> Oracle DB</span>
+                            <span class="chip"><i class="fas fa-network-wired"></i> REST APIs</span>
+                            <span class="chip"><i class="fas fa-file-contract"></i> OpenAPI / Swagger</span>
+                            <span class="chip"><i class="fas fa-table"></i> Cassandra</span>
+                            <span class="chip"><i class="fas fa-link"></i> Spring Data JPA</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>Analytical Thinker</h3>
+        </section>
+
+        <!-- Achievements & Certifications Section -->
+        <section id="achievements" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">05 / Recognition</span>
+                    <h2 class="section-title">Certifications &amp; Achievements</h2>
+                    <p class="section-description">
+                        Verified professional certifications and competitive programming recognitions.
+                    </p>
+                </div>
+
+                <div class="achievements-grid">
+                    <!-- Cert 1 -->
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Oracle Cloud Infrastructure 2025 DevOps Professional</h4>
+                            <p>Certified Professional Badge (1Z0-1109-25)</p>
+                            <div class="cert-meta">Oracle ID: OC7473288</div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fab fa-aws"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>AWS Academy Graduate – Cloud Foundations</h4>
+                            <p>AWS Training &amp; Certification Badge</p>
+                            <div class="cert-meta">Amazon Web Services</div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>EPAM NextGen University Program</h4>
+                            <p>Cloud &amp; DevOps Specialization</p>
+                            <div class="cert-meta">EPAM Systems</div>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 1 -->
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class="fas fa-trophy text-warning"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>ICPC Regional Contest, Mexico (2025)</h4>
+                            <p>Represented the Autonomous University of Aguascalientes in the regional phase of the ICPC International Collegiate Programming Contest.</p>
+                            <div class="cert-meta">ICPC Regional Finalist</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <h3>Motivated to keep learning</h3>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">06 / Connect</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-description">
+                        I am open to engineering opportunities, technical discussions, and collaborations.
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-cards">
+                        <div class="contact-item-card" onclick="copyToClipboard('+524499609065', 'Phone number')" style="cursor: pointer;">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <label>Phone (Click to copy)</label>
+                                <span>+52 449 960 9065</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-card" onclick="copyToClipboard('renerosendo8@gmail.com', 'Email address')" style="cursor: pointer;">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <label>Email (Click to copy)</label>
+                                <span>renerosendo8@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <label>GitHub</label>
+                                <a href="https://github.com/starcrash16" target="_blank" rel="noopener">github.com/starcrash16</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <label>LinkedIn</label>
+                                <a href="https://www.linkedin.com/in/rene-de-anda-medina-131bab24a/" target="_blank" rel="noopener">linkedin.com/in/rene-de-anda-medina</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="contactName">Your Name</label>
+                                <input type="text" id="contactName" class="form-control" placeholder="Jane Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Your Email</label>
+                                <input type="email" id="contactEmail" class="form-control" placeholder="jane@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactMessage">Message</label>
+                                <textarea id="contactMessage" class="form-control" placeholder="Hello René, I'd like to discuss an opportunity..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-copyright">
-                <p>ISC René De Anda Medina<br>&copy; 2025 All rights reserved</p>
-            </div>
-            <div class="footer-social">
-                <a href="https://github.com/starcrash16" target="_blank" aria-label="GitHub Profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/rene-de-anda-medina-131bab24a/" target="_blank" aria-label="LinkedIn Profile">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-txt">
+                    <h3>René De Anda Medina</h3>
+                    <p>&copy; 2026 René De Anda Medina. All rights reserved.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://github.com/starcrash16" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rene-de-anda-medina-131bab24a/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:renerosendo8@gmail.com" class="social-icon-btn" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Project Lightbox Modal -->
+    <div class="modal-backdrop" id="projectModal">
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Close Modal">&times;</button>
+            <h3 id="modalTitle" style="color: var(--color-accent-gold); margin-bottom: 1rem; font-size: 1.3rem;">Project Title</h3>
+            <div class="modal-img-container">
+                <img id="modalImage" src="" alt="Project Screenshot">
+            </div>
+            <div class="modal-thumbs" id="modalThumbs"></div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="JS/function.js"></script>
 </body>
 </html>
